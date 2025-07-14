@@ -13,6 +13,7 @@ import UpgradeModal from './components/UpgradeModal';
 import AdminDashboard from './components/AdminDashboard';
 import APIHealthIndicator from './components/APIHealthIndicator';
 import LandingPage from './components/LandingPage';
+import JagannathaTatvaModule from './components/JagannathaTatvaModule';
 import { MapIcon, StarIcon } from './components/Icons';
 
 // Define the UnifiedChat interface locally to match the service
@@ -55,6 +56,7 @@ const App: React.FC = () => {
   const [isJourneyMapOpen, setIsJourneyMapOpen] = useState(false);
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
+  const [showJagannathaTatva, setShowJagannathaTatva] = useState(false);
 
   // Check if user is admin (temporarily allowing all authenticated users for demo)
   const isAdmin = isAuthenticated || // Temporary: any authenticated user can access admin
@@ -183,6 +185,11 @@ How would you like to begin your spiritual journey today?`
     return <AdminDashboard />;
   }
 
+  // Show Jagannatha Tatva module if requested
+  if (showJagannathaTatva) {
+    return <JagannathaTatvaModule />;
+  }
+
   return (
     <>
       {/* Show landing page for non-authenticated users */}
@@ -224,6 +231,12 @@ How would you like to begin your spiritual journey today?`
                        <span className="hidden sm:inline">Go Pro</span>
                      </button>
                   )}
+                  <button
+                    onClick={() => setShowJagannathaTatva(!showJagannathaTatva)}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 transition-all"
+                  >
+                    🏛️ <span className="hidden sm:inline">Jagannatha Tatva</span>
+                  </button>
                   {isAdmin && (
                     <button
                       onClick={() => setShowAdminDashboard(!showAdminDashboard)}

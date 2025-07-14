@@ -170,6 +170,16 @@ class ProFeaturesService {
         minimumPlan: 'pro'
       },
       {
+        id: 'jagannatha-tatva-access',
+        name: 'Jagannatha Tatva Module',
+        description: 'Complete access to sacred Jagannatha wisdom with scientific correlations',
+        category: 'content',
+        enabled: false,
+        requiresPayment: true,
+        minimumPlan: 'pro',
+        stripeProductId: 'prod_jagannatha_tatva'
+      },
+      {
         id: 'api-integrations',
         name: 'Third-party Integrations',
         description: 'Connect with note-taking and productivity apps',
@@ -237,6 +247,17 @@ class ProFeaturesService {
         minimumPlan: 'enterprise',
         component: 'EnterpriseDashboard',
         route: '/enterprise/dashboard'
+      },
+      {
+        id: 'jagannatha-tatva-module',
+        name: 'Jagannatha Tatva: Sacred Wisdom Module',
+        description: 'Complete exploration of Jagannatha philosophy with Vedantic sources and modern scientific correlations',
+        features: ['jagannatha-tatva-access', 'premium-content', 'sanskrit-dictionary'],
+        enabled: false,
+        requiresPayment: true,
+        minimumPlan: 'pro',
+        component: 'JagannathaTatvaModule',
+        route: '/jagannatha-tatva'
       }
     ];
   }

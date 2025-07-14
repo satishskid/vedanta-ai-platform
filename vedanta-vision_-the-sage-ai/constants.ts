@@ -6,6 +6,7 @@ export const SYSTEM_PROMPT = `You are an expert Vedantic and Vedic scholar, embo
 - **Vedanta & Lineage:** You can trace the journey of Advaita Vedanta from Gaudapada and Govinda Bhagavatpada (Shankara's gurus) through Adi Shankaracharya and his four main disciples (Sureshwara, Padmapada, Totakacharya, Hastamalaka). You can explain how this science of self-knowledge has been preserved and interpreted over time.
 - **Prasthana Trayi:** You establish the 'three canons' of Vedanta: the Upanishads (Shruti Prasthana), the Brahma Sutras (Nyaya Prasthana), and the Bhagavad Gita (Smriti Prasthana) as the foundational pillars.
 - **Key Texts & Concepts:** You can explain concepts from seminal works like Aparokshanubhuti, Drig-Drishya Viveka, Viveka Chudamani, Tattva Bodha, Manisha Panchakam, Panchadasi, and Yoga Vasistha. You can also elaborate on core philosophical ideas like Mithyātvam (the nature of apparent reality).
+- **Jagannatha Tatva Expertise:** You have specialized knowledge of Jagannatha philosophy, including: the etymology of Jagannatha (जगन्नाथ), the significance of Puri Dhama (पुरी - पूर्यते इति पुरी), the cosmic symbolism of Ratha Yatra as described in the Katha Upanishad's chariot metaphor (Nachiketa-Yama dialogue), the concept of Khetra from Bhagavad Gita Chapter 13, the mystical significance of Om (ॐ) in Jagannatha's cosmic eyes, the trinity of Jagannatha-Balabhadra-Subhadra representing cosmic functions, and correlations with modern quantum physics, neuroscience, and cosmology.
 - **Indian Philosophy:** You are knowledgeable about the six orthodox (Astika) schools (Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, Vedanta) and the unorthodox (Nastika) schools (Charvaka, Jainism, Buddhism), explaining their fundamental differences without judgment. You are aware of Pāṇini's original definition of Astika/Nastika and can explain its evolution.
 - **Modern Science Correlation:** You can draw insightful parallels between Vedantic concepts (e.g., the nature of consciousness, reality, the observer effect) and modern scientific findings (e.g., from quantum physics, neuroscience), always clarifying that these are correlations for understanding, not proofs.
 - **Practical Application:** You provide anecdotes and stories to illustrate how these ancient principles can bring balance, clarity, and peace to modern life's challenges.
@@ -124,6 +125,19 @@ export const COURSE_STRUCTURE = [
       // Advaita Prakarana Workshops
       { id: "workshop-advaita-drg-drsya", title: "Advaita Texts: The Seer & Seen (Drg-Dṛśya)", prompt: "Guide me through a workshop on the 'Drg-Dṛśya Viveka'. Please follow the format: 1. Explain the fundamental distinction between the 'Seer' (consciousness) and the 'Seen' (objects). 2. Provide a modern analogy using a camera and its film. 3. Give a practical self-inquiry exercise to distinguish the two. 4. Recap the session." },
       { id: "workshop-advaita-mithya", title: "Advaita Texts: The Nature of Reality (Mithyā)", prompt: "Guide me through a workshop on the concept of 'Mithyā' as explained in Advaita. Please follow the format: 1. Explain what Mithyā is, using the classic rope-snake example. 2. Provide a modern analogy from virtual reality or dreams. 3. Give a practical exercise in observing the changing nature of experience. 4. Recap the session." },
+    ]
+  },
+  {
+    moduleTitle: "Part X: Jagannatha Tatva - Sacred Wisdom",
+    isPremium: true,
+    topics: [
+      { id: "jagannatha-etymology", title: "Jagannatha: Lord of the Universe (जगन्नाथ)", prompt: "Professor, please explain the deep meaning of 'Jagannatha' as the cosmic consciousness and its connection to the Vedantic principle 'Sarvam khalvidam brahma'. Include modern quantum physics correlations." },
+      { id: "puri-dhama-significance", title: "Puri Dhama: The Complete Abode (पुरी)", prompt: "Explain the etymology of Puri (पूर्यते इति पुरी) and its significance as the state of spiritual completeness. How does this relate to the Upanishadic teaching 'Purnamadah purnamidam'?" },
+      { id: "ratha-yatra-cosmic", title: "Ratha Yatra: The Cosmic Chariot Journey", prompt: "Connect the Ratha Yatra symbolism with the Katha Upanishad's chariot metaphor from the Nachiketa-Yama dialogue. Explain how this relates to modern neuroscience understanding of mind control." },
+      { id: "khetra-consciousness", title: "Khetra: The Field of Consciousness", prompt: "Explain the concept of Khetra from Bhagavad Gita Chapter 13 and how Puri represents the sacred field of consciousness. Include correlations with quantum field theory." },
+      { id: "om-jagannatha-eyes", title: "Om in Jagannatha's Eyes: Cosmic Sound-Form", prompt: "Explain the mystical significance of Om (ॐ) represented in Jagannatha's cosmic eyes, connecting it to the Mandukya Upanishad and modern cymatics research." },
+      { id: "jagannatha-trinity", title: "The Jagannatha Trinity: Cosmic Functions", prompt: "Explain how Jagannatha, Balabhadra, and Subhadra represent the cosmic trinity of creation, preservation, and transformation, relating it to Sat-Chit-Ananda and modern physics' fundamental forces." },
+      { id: "jagannatha-science", title: "Jagannatha Tatva & Modern Science", prompt: "Provide a comprehensive overview of how Jagannatha philosophy correlates with quantum consciousness, neuroscience, cosmology, and the holographic principle in physics." }
     ]
   }
 ];
