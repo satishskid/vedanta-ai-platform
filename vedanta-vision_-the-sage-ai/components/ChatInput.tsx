@@ -79,8 +79,6 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, isAuthe
                                    Upgrade to continue
                                </button>
                            </div>
-                        ) : messagesLeft === -1 ? (
-                            <span className="text-green-600 font-medium">⭐ Unlimited messages (Pro)</span>
                         ) : (
                             <span>You have {messagesLeft} messages left today.</span>
                         )}

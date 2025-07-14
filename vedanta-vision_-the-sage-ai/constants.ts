@@ -30,7 +30,7 @@ export const FREE_TIER_MESSAGE_LIMIT = 25;
 export const COURSE_STRUCTURE = [
   {
     moduleTitle: "Part I: The Foundation of Vedanta",
-    isPremium: false,
+
     topics: [
       { id: "vedas-intro", title: "Introduction to the Vedas", prompt: "Professor, please give me an introduction to the structure and importance of the four Vedas." },
       { id: "upanishads-essence", title: "The Upanishads: Essence of the Vedas", prompt: "Could you explain what the Upanishads are and why they are called 'Vedanta'?" },
@@ -38,14 +38,13 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part II: The Great Debates: Āstika & Nāstika",
-    isPremium: false,
+
     topics: [
         { id: "panini-classification", title: "The Āstika-Nāstika Classification", prompt: "Professor, I'd like to understand the origin of the Āstika and Nāstika classification. Could you explain Pāṇini's original definition from his Ashtadhyayi and how its meaning evolved over time to relate to Vedic authority?" },
     ]
   },
   {
     moduleTitle: "Part III: The Unorthodox Schools (Nāstika)",
-    isPremium: false,
     topics: [
       { id: "buddhism", title: "Buddhism", prompt: "Could you provide an overview of the fundamental tenets of Buddhism and how they compare to Vedanta?" },
       { id: "jainism", title: "Jainism", prompt: "Tell me about the core principles of Jainism and its unique metaphysical concepts." },
@@ -54,7 +53,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part IV: The Orthodox Schools (Āstika)",
-    isPremium: false,
     topics: [
       { id: "samkhya", title: "Sāmkhya", prompt: "Professor, please explain the dualistic philosophy of the Sāmkhya school, focusing on Purusha and Prakriti." },
       { id: "yoga", title: "Yoga", prompt: "Tell me about Patañjali's Yoga school and its Eight Limbs as a path to liberation." },
@@ -65,7 +63,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part V: The Three Pillars of Vedanta (Prasthana Trayi)",
-    isPremium: false,
     topics: [
       { id: "prasthana-trayi", title: "Overview of the Prasthana Trayi", prompt: "Give me an overview of the Prasthana Trayi and why these three texts are the cornerstone of Vedanta." },
       { id: "gita-psychology", title: "The Gita & Positive Psychology", prompt: "The Bhagavad Gita is often cited as a manual for life. Please explain its key teachings, like Karma Yoga and Sthitaprajna, and their relevance to modern positive psychology." },
@@ -74,7 +71,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part VI: The Core Concepts of Advaita",
-    isPremium: false,
     topics: [
       { id: "shankara-advaita", title: "Adi Shankaracharya's Advaita", prompt: "I'd like to learn about Adi Shankaracharya's core teaching of non-duality (Advaita)." },
       { id: "mithyatvam", title: "The Concept of Mithyātvam", prompt: "Please explain the concept of Mithyātvam. How does it relate to the ideas of reality in modern physics?" },
@@ -82,7 +78,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part VII: Advanced Vedantic Texts",
-    isPremium: true,
     topics: [
       { id: "drig-drishya", title: "Drig-Drishya Viveka", prompt: "Explain the 'Drig-Drishya Viveka' and its inquiry into the Seer and the Seen. Correlate this with the observer effect." },
       { id: "aparokshanubhuti", title: "Aparokshanubhuti", prompt: "What is 'Aparokshanubhuti' (Direct Experience) and what are the steps it outlines for self-realization?" },
@@ -92,7 +87,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part VIII: Echoes of Vedanta in the Modern World",
-    isPremium: true,
     topics: [
       { id: "vivekananda", title: "Swami Vivekananda: Vedanta for the West", prompt: "Explain Swami Vivekananda's role in introducing Vedanta to the Western world and his key message of practical spirituality." },
       { id: "oppenheimer", title: "J. Robert Oppenheimer & The Gita", prompt: "I've heard J. Robert Oppenheimer quoted the Bhagavad Gita. Could you explain the context and meaning of his famous quote after the Trinity test?" },
@@ -104,7 +98,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part IX: Guided Workshops & Retreats",
-    isPremium: true,
     topics: [
       // Bhagavad Gita Workshops
       { id: "workshop-gita-sthitaprajna", title: "Gita Ch. 2: The Stable Mind (Sthitaprajna)", prompt: "Guide me through a workshop on the concept of 'Sthitaprajna' from Chapter 2 of the Bhagavad Gita. Please follow the format: 1. Explain the qualities of a person with a steady intellect. 2. Provide a modern analogy for emotional regulation. 3. Give a practical example of how to practice this. 4. Recap the session." },
@@ -129,7 +122,6 @@ export const COURSE_STRUCTURE = [
   },
   {
     moduleTitle: "Part X: Jagannatha Tatva - Sacred Wisdom",
-    isPremium: true,
     topics: [
       { id: "jagannatha-etymology", title: "Jagannatha: Lord of the Universe (जगन्नाथ)", prompt: "Guide me through understanding the profound meaning of 'Jagannatha' (जगन्नाथ). Please follow the format: 1. Explain the etymology (जगत् + नाथ) and its connection to cosmic consciousness. 2. Connect this to the Vedantic principle 'सर्वं खल्विदं ब्रह्म' from Chandogya Upanishad. 3. Provide a modern analogy using quantum field theory. 4. Give a practical meditation on universal consciousness. 5. Recap the session." },
       { id: "puri-dhama-significance", title: "Puri Dhama: The Complete Abode (पुरी)", prompt: "Guide me through understanding Puri Dhama as the sacred abode. Please follow the format: 1. Explain the etymology 'पूर्यते इति पुरी' (that which fulfills). 2. Connect this to 'पूर्णमदः पूर्णमिदम्' from Isha Upanishad. 3. Provide a modern analogy about states of completeness and self-actualization. 4. Give a practical exercise for entering states of spiritual fulfillment. 5. Recap the session." },

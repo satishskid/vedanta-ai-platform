@@ -4,12 +4,12 @@ import { type Message, Role } from './types';
 import { COURSE_STRUCTURE, FREE_TIER_MESSAGE_LIMIT } from './constants';
 import { createChatSession, sendMessageStream } from './services/geminiService';
 import AnalyticsService from './services/analyticsService';
-import ProFeaturesService from './services/proFeaturesService';
+
 import Sidebar from './components/Sidebar';
 import ChatWindow from './components/ChatWindow';
 import ChatInput from './components/ChatInput';
 import JourneyMapModal from './components/JourneyMapModal';
-import UpgradeModal from './components/UpgradeModal';
+
 import AdminDashboard from './components/AdminDashboard';
 import APIHealthIndicator from './components/APIHealthIndicator';
 import LandingPage from './components/LandingPage';
@@ -37,15 +37,11 @@ const App: React.FC = () => {
   // Debug authentication state
   console.log("🔐 Auth Debug:", { isSignedIn, isAuthenticated, user: user?.id, isPaidSubscriber });
 
-  // Track user session for analytics and load Pro features
+  // Track user session for analytics
   useEffect(() => {
     if (isAuthenticated && user?.id) {
       const analytics = AnalyticsService.getInstance();
       analytics.trackUserSession(user.id);
-
-      // Load Pro features configuration
-      const proService = ProFeaturesService.getInstance();
-      proService.loadFromStorage();
     }
   }, [isAuthenticated, user?.id]);
 
@@ -54,7 +50,7 @@ const App: React.FC = () => {
 
   const [completedTopics, setCompletedTopics] = useState<string[]>([]);
   const [isJourneyMapOpen, setIsJourneyMapOpen] = useState(false);
-  const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
+
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
 
 
@@ -117,13 +113,9 @@ How would you like to begin your spiritual journey today?`
   const handleSendMessage = useCallback(async (text: string, topicId?: string) => {
     if (!text.trim() || isLoading || !chatSession || !isAuthenticated) return;
     
-    // Check if user has unlimited messages (Pro feature)
-    const proService = ProFeaturesService.getInstance();
-    const hasUnlimitedMessages = proService.isFeatureEnabled('unlimited-messages') && isPaidSubscriber;
-
-    // Enforce free tier message limit only if user doesn't have unlimited messages
-    if (!hasUnlimitedMessages && dailyMessageCount >= FREE_TIER_MESSAGE_LIMIT) {
-      setIsUpgradeModalOpen(true);
+    // Enforce free tier message limit for all users initially
+    if (dailyMessageCount >= FREE_TIER_MESSAGE_LIMIT) {
+      alert(`You've reached your daily limit of ${FREE_TIER_MESSAGE_LIMIT} messages. Please try again tomorrow, or we'll introduce Sage Pass soon for unlimited access!`);
       return;
     }
 
@@ -160,25 +152,16 @@ How would you like to begin your spiritual journey today?`
       alert("Please log in to begin a lesson.");
       return;
     }
-    if (isPremium && !isPaidSubscriber) {
-      setIsUpgradeModalOpen(true);
-      return;
-    }
+    // Remove premium gating - all content accessible with message limits
     handleSendMessage(prompt, id);
   };
 
 
 
-  const handleSimulatedUpgrade = () => {
-    // In a real app, this would redirect to payment processing
-    // For now, just close the modal
-    setIsUpgradeModalOpen(false);
-  }
 
-  // Calculate messages left (unlimited for Pro users)
-  const proService = ProFeaturesService.getInstance();
-  const hasUnlimitedMessages = proService.isFeatureEnabled('unlimited-messages') && isPaidSubscriber;
-  const messagesLeft = hasUnlimitedMessages ? -1 : FREE_TIER_MESSAGE_LIMIT - dailyMessageCount;
+
+  // Calculate messages left for all users
+  const messagesLeft = FREE_TIER_MESSAGE_LIMIT - dailyMessageCount;
 
   // Show admin dashboard if requested
   if (showAdminDashboard && isAdmin) {
@@ -200,7 +183,6 @@ How would you like to begin your spiritual journey today?`
         <Sidebar
           course={COURSE_STRUCTURE}
           onSelectTopic={handleTopicSelect}
-          onPremiumClick={() => setIsUpgradeModalOpen(true)}
           disabled={isLoading}
           completedTopics={completedTopics}
           isAuthenticated={isAuthenticated}
@@ -269,11 +251,7 @@ How would you like to begin your spiritual journey today?`
         course={COURSE_STRUCTURE}
         completedTopics={completedTopics}
       />
-      <UpgradeModal
-        isOpen={isUpgradeModalOpen}
-        onClose={() => setIsUpgradeModalOpen(false)}
-        onUpgrade={handleSimulatedUpgrade}
-      />
+
       </SignedIn>
     </>
   );

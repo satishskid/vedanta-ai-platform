@@ -22,7 +22,6 @@ const LandingPage: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Features</a>
-              <a href="#pricing" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Pricing</a>
               <a href="#about" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">About</a>
               <SignInButton>
                 <button className="text-vedic-accent hover:text-vedic-accent-dark transition-colors">
@@ -54,7 +53,6 @@ const LandingPage: React.FC = () => {
             <div className="md:hidden bg-white border-t border-vedic-border">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <a href="#features" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Features</a>
-                <a href="#pricing" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Pricing</a>
                 <a href="#about" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">About</a>
                 <div className="flex flex-col space-y-2 px-3 py-2">
                   <SignInButton>
@@ -105,11 +103,15 @@ const LandingPage: React.FC = () => {
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-vedic-secondary-text">
               <div className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
-                <span>10+ Daily Messages Free</span>
+                <span>10 Daily Messages Free</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
                 <span>No Credit Card Required</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                <span>All Content Accessible</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
@@ -246,154 +248,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-vedic-accent-dark mb-4">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-xl text-vedic-secondary-text max-w-2xl mx-auto">
-              Start your spiritual journey for free. Upgrade when you're ready for unlimited learning.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Free Plan */}
-            <div className="bg-vedic-bg border-2 border-vedic-border rounded-xl p-8 relative">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-vedic-accent-dark mb-2">Free</h3>
-                <div className="text-4xl font-bold text-vedic-accent mb-4">₹0<span className="text-lg text-vedic-secondary-text">/month</span></div>
-                <p className="text-vedic-secondary-text mb-6">Perfect for getting started</p>
-
-                <ul className="space-y-3 mb-8 text-left">
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>10 messages per day</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Basic course access</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Community support</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Mobile responsive</span>
-                  </li>
-                </ul>
-
-                <SignUpButton>
-                  <button className="w-full bg-vedic-accent text-white py-3 rounded-lg font-semibold hover:bg-vedic-accent-dark transition-colors">
-                    Start Free
-                  </button>
-                </SignUpButton>
-              </div>
-            </div>
-
-            {/* Pro Plan */}
-            <div className="bg-vedic-bg border-2 border-vedic-accent rounded-xl p-8 relative transform scale-105">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-vedic-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
-              </div>
-
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-vedic-accent-dark mb-2">Pro</h3>
-                <div className="text-4xl font-bold text-vedic-accent mb-2">₹1,499<span className="text-lg text-vedic-secondary-text">/month</span></div>
-                <div className="text-sm text-vedic-secondary-text mb-4">~$18 USD</div>
-                <p className="text-vedic-secondary-text mb-6">Unlimited spiritual learning</p>
-
-                <ul className="space-y-3 mb-8 text-left">
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Unlimited messages</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Premium course content</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Priority AI access</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Advanced workshops</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Personal learning path</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Email support</span>
-                  </li>
-                </ul>
-
-                <SignUpButton>
-                  <button className="w-full bg-vedic-accent text-white py-3 rounded-lg font-semibold hover:bg-vedic-accent-dark transition-colors">
-                    Upgrade to Pro
-                  </button>
-                </SignUpButton>
-              </div>
-            </div>
-
-            {/* Enterprise Plan */}
-            <div className="bg-vedic-bg border-2 border-vedic-border rounded-xl p-8 relative">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-vedic-accent-dark mb-2">Enterprise</h3>
-                <div className="text-4xl font-bold text-vedic-accent mb-2">₹3,999<span className="text-lg text-vedic-secondary-text">/month</span></div>
-                <div className="text-sm text-vedic-secondary-text mb-4">~$48 USD</div>
-                <p className="text-vedic-secondary-text mb-6">For institutions & teachers</p>
-
-                <ul className="space-y-3 mb-8 text-left">
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Everything in Pro</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Custom API access</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>White-label options</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Dedicated support</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Analytics dashboard</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span>
-                    <span>Custom integrations</span>
-                  </li>
-                </ul>
-
-                <button className="w-full border-2 border-vedic-accent text-vedic-accent py-3 rounded-lg font-semibold hover:bg-vedic-accent hover:text-white transition-colors">
-                  Contact Sales
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-vedic-secondary-text mb-4">
-              All plans include mobile access, secure data, and regular updates
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-vedic-secondary-text">
-              <span>✓ 30-day money-back guarantee</span>
-              <span>✓ Cancel anytime</span>
-              <span>✓ No setup fees</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-vedic-accent text-white">
@@ -402,8 +257,8 @@ const LandingPage: React.FC = () => {
             Begin Your Spiritual Journey Today
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of seekers discovering the timeless wisdom of Vedanta. 
-            Start with 10 free messages daily - no commitment required.
+            Join thousands of seekers discovering the timeless wisdom of Vedanta.
+            Get 10 free messages daily with full access to all content - no commitment required.
           </p>
           
           <SignUpButton>
@@ -413,7 +268,7 @@ const LandingPage: React.FC = () => {
           </SignUpButton>
           
           <p className="text-sm mt-4 opacity-75">
-            Free forever • Upgrade anytime • Cancel anytime
+            Free to start • 10 daily messages • All content accessible
           </p>
         </div>
       </section>

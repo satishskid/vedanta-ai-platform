@@ -16,14 +16,13 @@ interface CourseModule {
 interface SidebarProps {
     course: CourseModule[];
     onSelectTopic: (prompt: string, id: string, isPremium: boolean) => void;
-    onPremiumClick: () => void;
     disabled: boolean;
     completedTopics: string[];
     isAuthenticated: boolean;
     isPaidSubscriber: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ course, onSelectTopic, onPremiumClick, disabled, completedTopics, isAuthenticated, isPaidSubscriber }) => {
+const Sidebar: React.FC<SidebarProps> = ({ course, onSelectTopic, disabled, completedTopics, isAuthenticated, isPaidSubscriber }) => {
     const [openModules, setOpenModules] = useState<string[]>([]);
 
     const toggleModule = (moduleTitle: string) => {
@@ -45,11 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ course, onSelectTopic, onPremiumClick
             return;
         }
 
-        if (isPremium && !isPaidSubscriber) {
-            onPremiumClick();
-            return;
-        }
-
+        // Remove premium gating - all content accessible with message limits
         onSelectTopic(prompt, id, isPremium);
     }
 
@@ -111,7 +106,8 @@ const Sidebar: React.FC<SidebarProps> = ({ course, onSelectTopic, onPremiumClick
                                     const isCompleted = completedTopics.includes(topic.id);
                                     const isWorkshop = module.moduleTitle.includes("Workshops");
                                     const Icon = isWorkshop ? WalkIcon : BookOpenIcon;
-                                    const showLock = module.isPremium && !isPaidSubscriber;
+                                    // Remove premium lock - all content accessible
+                                    const showLock = false;
 
                                     return (
                                         <li key={topic.id} className="ml-2">
