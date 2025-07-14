@@ -13,6 +13,9 @@ import JourneyMapModal from './components/JourneyMapModal';
 import AdminDashboard from './components/AdminDashboard';
 import APIHealthIndicator from './components/APIHealthIndicator';
 import LandingPage from './components/LandingPage';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import SupportPage from './components/SupportPage';
 
 import { MapIcon, StarIcon } from './components/Icons';
 
@@ -52,6 +55,7 @@ const App: React.FC = () => {
   const [isJourneyMapOpen, setIsJourneyMapOpen] = useState(false);
 
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
+  const [currentPage, setCurrentPage] = useState<'main' | 'privacy' | 'terms' | 'support'>('main');
 
 
   // Check if user is admin - restrict to specific authorized users only
@@ -168,13 +172,24 @@ How would you like to begin your spiritual journey today?`
     return <AdminDashboard />;
   }
 
+  // Handle page navigation
+  if (currentPage === 'privacy') {
+    return <PrivacyPolicy onBack={() => setCurrentPage('main')} />;
+  }
+  if (currentPage === 'terms') {
+    return <TermsOfService onBack={() => setCurrentPage('main')} />;
+  }
+  if (currentPage === 'support') {
+    return <SupportPage onBack={() => setCurrentPage('main')} />;
+  }
+
 
 
   return (
     <>
       {/* Show landing page for non-authenticated users */}
       <SignedOut>
-        <LandingPage />
+        <LandingPage onNavigate={setCurrentPage} />
       </SignedOut>
 
       {/* Show main app for authenticated users */}

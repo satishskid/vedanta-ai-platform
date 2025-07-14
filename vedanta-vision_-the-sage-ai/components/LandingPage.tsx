@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { SignInButton, SignUpButton, useUser } from '@clerk/clerk-react';
 
-const LandingPage: React.FC = () => {
+interface LandingPageProps {
+  onNavigate?: (page: 'privacy' | 'terms' | 'support') => void;
+}
+
+const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
   const { isSignedIn } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -81,8 +85,8 @@ const LandingPage: React.FC = () => {
               <span className="block text-vedic-accent">AI-Powered Vedanta</span>
             </h1>
             <p className="text-xl sm:text-2xl text-vedic-secondary-text mb-8 max-w-3xl mx-auto">
-              Learn Vedanta, Upanishads, and Sanskrit from Professor Arya - your personal AI guru. 
-              Experience authentic spiritual teachings adapted for the modern seeker.
+              Explore the profound teachings of Vedanta with Professor Arya - your contemplative AI guide.
+              Experience authentic spiritual wisdom adapted for modern understanding.
             </p>
             
             {/* CTA Buttons */}
@@ -149,7 +153,7 @@ const LandingPage: React.FC = () => {
               <div className="text-4xl mb-4">📜</div>
               <h3 className="text-xl font-semibold text-vedic-accent-dark mb-3">Authentic Sources</h3>
               <p className="text-vedic-secondary-text">
-                Learn from original Sanskrit texts, Upanishads, and commentaries by great masters like Adi Shankaracharya.
+                Explore authentic Vedantic texts and commentaries by great masters like Adi Shankaracharya.
               </p>
             </div>
 
@@ -237,42 +241,55 @@ const LandingPage: React.FC = () => {
       {/* Footer */}
       <footer className="bg-vedic-accent-dark text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="text-2xl font-bold mb-4">🕉️ Vedanta Vision</div>
-              <p className="text-gray-300 mb-4">
-                Bridging ancient wisdom with modern technology to make Vedantic knowledge accessible to all.
+              <p className="text-gray-300 mb-6">
+                A digital sanctuary for contemplative learning, bridging ancient wisdom with modern understanding.
+                Created with reverence for the timeless teachings of Vedanta.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-300 hover:text-white">Privacy</a>
-                <a href="#" className="text-gray-300 hover:text-white">Terms</a>
-                <a href="#" className="text-gray-300 hover:text-white">Support</a>
+              <div className="text-sm text-gray-400">
+                Thoughtfully developed by <span className="text-vedic-accent font-medium">GreyBrain.ai</span>
               </div>
             </div>
-            
+
             <div>
-              <h3 className="font-semibold mb-4">Learning</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-white">Vedanta Basics</a></li>
-                <li><a href="#" className="hover:text-white">Upanishads</a></li>
-                <li><a href="#" className="hover:text-white">Sanskrit</a></li>
-                <li><a href="#" className="hover:text-white">Meditation</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-white">Help Center</a></li>
-                <li><a href="#" className="hover:text-white">Contact Us</a></li>
-                <li><a href="#" className="hover:text-white">Community</a></li>
-                <li><a href="#" className="hover:text-white">Feedback</a></li>
+              <h3 className="font-semibold mb-4">Platform</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li>
+                  <button
+                    onClick={() => onNavigate?.('privacy')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Privacy Policy
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => onNavigate?.('terms')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Terms of Service
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => onNavigate?.('support')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Support
+                  </button>
+                </li>
+                <li><a href="mailto:contact@vedantavision.ai" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2024 Vedanta Vision. All rights reserved. Made with 🙏 for spiritual seekers worldwide.</p>
+            <p>&copy; 2024 Vedanta Vision. All rights reserved.</p>
+            <p className="text-sm mt-2 text-gray-400">
+              Made with 🙏 by <span className="text-vedic-accent">GreyBrain.ai</span> for sincere seekers of wisdom
+            </p>
           </div>
         </div>
       </footer>
