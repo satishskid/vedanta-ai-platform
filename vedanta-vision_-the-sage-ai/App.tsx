@@ -54,10 +54,10 @@ const App: React.FC = () => {
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
 
 
-  // Check if user is admin (temporarily allowing all authenticated users for demo)
-  const isAdmin = isAuthenticated || // Temporary: any authenticated user can access admin
-                  user?.publicMetadata?.isAdmin === true ||
-                  user?.emailAddresses?.[0]?.emailAddress?.includes('admin');
+  // Check if user is admin - restrict to specific authorized users only
+  const isAdmin = user?.publicMetadata?.isAdmin === true ||
+                  user?.emailAddresses?.[0]?.emailAddress === 'admin@vedantavision.ai' ||
+                  user?.emailAddresses?.[0]?.emailAddress === 'satish@vedantavision.ai';
 
   const initializeChat = useCallback(async () => {
     try {
@@ -204,12 +204,7 @@ How would you like to begin your spiritual journey today?`
                     <MapIcon className="w-5 h-5" />
                     <span className="hidden sm:inline">My Journey</span>
                   </button>
-                  {!isPaidSubscriber && (
-                     <button onClick={() => setIsUpgradeModalOpen(true)} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-yellow-500 text-white font-semibold hover:bg-yellow-600 transition-colors">
-                       <StarIcon className="w-5 h-5" />
-                       <span className="hidden sm:inline">Go Pro</span>
-                     </button>
-                  )}
+
 
                   {isAdmin && (
                     <button
