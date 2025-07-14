@@ -102,20 +102,16 @@ const LandingPage: React.FC = () => {
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-vedic-secondary-text">
               <div className="flex items-center gap-2">
-                <span className="text-green-500">✓</span>
-                <span>10 Daily Messages Free</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-500">✓</span>
-                <span>No Credit Card Required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-500">✓</span>
-                <span>All Content Accessible</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-500">✓</span>
+                <span className="text-vedic-accent">•</span>
                 <span>Authentic Sanskrit Sources</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-vedic-accent">•</span>
+                <span>Contemplative Learning</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-vedic-accent">•</span>
+                <span>Timeless Wisdom</span>
               </div>
             </div>
           </div>
@@ -196,54 +192,19 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* About Section */}
       <section className="py-16 bg-vedic-bg-alt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-vedic-accent-dark mb-12">
-            Trusted by Spiritual Seekers Worldwide
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-vedic-accent-dark mb-8">
+            A Digital Sanctuary for Vedantic Learning
           </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-vedic-accent">1000+</div>
-              <div className="text-vedic-secondary-text">Active Learners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-vedic-accent">50+</div>
-              <div className="text-vedic-secondary-text">Countries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-vedic-accent">10k+</div>
-              <div className="text-vedic-secondary-text">Questions Answered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-vedic-accent">4.9★</div>
-              <div className="text-vedic-secondary-text">User Rating</div>
-            </div>
-          </div>
-
-          {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-vedic-secondary-text mb-4 italic">
-                "Professor Arya helped me understand complex Vedantic concepts that I struggled with for years. The explanations are clear and authentic."
-              </p>
-              <div className="font-semibold text-vedic-accent-dark">- Priya S., Mumbai</div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-vedic-secondary-text mb-4 italic">
-                "As a busy professional, having 24/7 access to Vedantic wisdom has transformed my spiritual practice. Highly recommended!"
-              </p>
-              <div className="font-semibold text-vedic-accent-dark">- David M., California</div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-vedic-secondary-text mb-4 italic">
-                "The Sanskrit explanations and authentic sources make this the most reliable platform for learning Vedanta online."
-              </p>
-              <div className="font-semibold text-vedic-accent-dark">- Dr. Rajesh K., Delhi</div>
-            </div>
+          <p className="text-lg text-vedic-secondary-text leading-relaxed mb-8">
+            Created with reverence for the ancient wisdom traditions, this platform offers a contemplative space
+            to explore the profound teachings of Vedanta. Each conversation is an opportunity to deepen your
+            understanding of these timeless truths that have guided seekers for millennia.
+          </p>
+          <div className="text-sm text-vedic-secondary-text">
+            <p>Thoughtfully developed by <span className="font-medium text-vedic-accent">GreyBrain.ai</span></p>
           </div>
         </div>
       </section>
@@ -254,21 +215,21 @@ const LandingPage: React.FC = () => {
       <section className="py-16 lg:py-24 bg-vedic-accent text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Begin Your Spiritual Journey Today
+            Begin Your Journey Within
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of seekers discovering the timeless wisdom of Vedanta.
-            Get 10 free messages daily with full access to all content - no commitment required.
+            Step into a space of contemplative learning where ancient wisdom meets modern understanding.
+            Your exploration of Vedantic truth awaits.
           </p>
-          
+
           <SignUpButton>
             <button className="bg-white text-vedic-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-              🕉️ Start Learning Free
+              🕉️ Enter the Sanctuary
             </button>
           </SignUpButton>
-          
+
           <p className="text-sm mt-4 opacity-75">
-            Free to start • 10 daily messages • All content accessible
+            A contemplative space for spiritual learning
           </p>
         </div>
       </section>

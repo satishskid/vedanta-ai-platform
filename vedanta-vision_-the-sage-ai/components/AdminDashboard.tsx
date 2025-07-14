@@ -4,6 +4,7 @@ import ConfigurationService from '../services/configurationService';
 import APIManagement from './APIManagement';
 import PaymentPlansManagement from './PaymentPlansManagement';
 import ProFeaturesManagement from './ProFeaturesManagement';
+import APIHealthIndicator from './APIHealthIndicator';
 
 interface APIStatus {
   name: string;
@@ -471,6 +472,9 @@ const AdminDashboard: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* API Health Indicator for Admin */}
+      <APIHealthIndicator />
     </div>
   );
 };

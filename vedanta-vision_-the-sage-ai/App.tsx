@@ -236,8 +236,7 @@ How would you like to begin your spiritual journey today?`
           />
         </main>
 
-        {/* API Health Indicator - always visible */}
-        <APIHealthIndicator />
+
       </div>
 
       <JourneyMapModal
