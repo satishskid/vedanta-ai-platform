@@ -60,8 +60,8 @@ const App: React.FC = () => {
 
   // Check if user is admin - restrict to specific authorized users only
   const isAdmin = user?.publicMetadata?.isAdmin === true ||
-                  user?.emailAddresses?.[0]?.emailAddress === 'admin@vedantavision.ai' ||
-                  user?.emailAddresses?.[0]?.emailAddress === 'satish@vedantavision.ai';
+                  user?.emailAddresses?.[0]?.emailAddress === 'dr.satish@greybrain.ai' ||
+                  user?.emailAddresses?.[0]?.emailAddress === 'balwant@greybrain.ai';
 
   const initializeChat = useCallback(async () => {
     try {

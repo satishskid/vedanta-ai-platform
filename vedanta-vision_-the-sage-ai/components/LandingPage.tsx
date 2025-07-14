@@ -280,7 +280,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     Support
                   </button>
                 </li>
-                <li><a href="mailto:contact@vedantavision.ai" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="mailto:balwant@greybrain.ai" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>

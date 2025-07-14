@@ -107,7 +107,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onBack }) => {
                 For privacy-related questions or requests, please contact us at:
               </p>
               <p className="text-vedic-secondary-text">
-                <strong>Email:</strong> privacy@vedantavision.ai<br />
+                <strong>Email:</strong> balwant@greybrain.ai<br />
                 <strong>Developer:</strong> GreyBrain.ai
               </p>
             </section>

@@ -121,7 +121,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
                 For questions about these Terms of Service, please contact:
               </p>
               <p className="text-vedic-secondary-text">
-                <strong>Email:</strong> legal@vedantavision.ai<br />
+                <strong>Email:</strong> balwant@greybrain.ai<br />
                 <strong>Developer:</strong> GreyBrain.ai
               </p>
             </section>

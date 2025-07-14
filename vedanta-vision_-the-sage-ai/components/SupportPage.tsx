@@ -106,15 +106,15 @@ const SupportPage: React.FC<SupportPageProps> = ({ onBack }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-vedic-accent-dark mb-2">General Support</h3>
-                    <p className="text-vedic-secondary-text">support@vedantavision.ai</p>
+                    <p className="text-vedic-secondary-text">balwant@greybrain.ai</p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-vedic-accent-dark mb-2">Technical Issues</h3>
-                    <p className="text-vedic-secondary-text">tech@vedantavision.ai</p>
+                    <p className="text-vedic-secondary-text">balwant@greybrain.ai</p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-vedic-accent-dark mb-2">Content Questions</h3>
-                    <p className="text-vedic-secondary-text">content@vedantavision.ai</p>
+                    <p className="text-vedic-secondary-text">dr.satish@greybrain.ai</p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-vedic-accent-dark mb-2">Developer</h3>
