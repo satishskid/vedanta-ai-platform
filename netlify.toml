@@ -1,10 +1,10 @@
 [build]
   # Directory to change to before starting a build
-  base = "."
-  
+  base = "vedanta-vision_-the-sage-ai"
+
   # Directory that contains the deploy-ready HTML files and assets
-  publish = "dist"
-  
+  publish = "vedanta-vision_-the-sage-ai/dist"
+
   # Default build command
   command = "npm run build"
 
