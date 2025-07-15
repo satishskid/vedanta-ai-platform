@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SignInButton, SignUpButton, useUser } from '@clerk/clerk-react';
 
-interface LandingPageProps {
-  onNavigate?: (page: 'privacy' | 'terms' | 'support') => void;
-}
-
-const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
+const LandingPage: React.FC = () => {
   const { isSignedIn } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -257,28 +254,28 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               <h3 className="font-semibold mb-4">Platform</h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
-                  <button
-                    onClick={() => onNavigate?.('privacy')}
-                    className="hover:text-white transition-colors text-left"
+                  <Link
+                    to="/privacy"
+                    className="hover:text-white transition-colors"
                   >
                     Privacy Policy
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button
-                    onClick={() => onNavigate?.('terms')}
-                    className="hover:text-white transition-colors text-left"
+                  <Link
+                    to="/terms"
+                    className="hover:text-white transition-colors"
                   >
                     Terms of Service
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button
-                    onClick={() => onNavigate?.('support')}
-                    className="hover:text-white transition-colors text-left"
+                  <Link
+                    to="/support"
+                    className="hover:text-white transition-colors"
                   >
                     Support
-                  </button>
+                  </Link>
                 </li>
                 <li><a href="mailto:balwant@greybrain.ai" className="hover:text-white transition-colors">Contact</a></li>
               </ul>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { useAuth, useUser, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 import { type Message, Role } from './types';
 import { COURSE_STRUCTURE, FREE_TIER_MESSAGE_LIMIT } from './constants';
@@ -55,7 +56,6 @@ const App: React.FC = () => {
   const [isJourneyMapOpen, setIsJourneyMapOpen] = useState(false);
 
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
-  const [currentPage, setCurrentPage] = useState<'main' | 'privacy' | 'terms' | 'support'>('main');
 
 
   // Check if user is admin - restrict to specific authorized users only
@@ -167,33 +167,28 @@ How would you like to begin your spiritual journey today?`
   // Calculate messages left for all users
   const messagesLeft = FREE_TIER_MESSAGE_LIMIT - dailyMessageCount;
 
-  // Show admin dashboard if requested
-  if (showAdminDashboard && isAdmin) {
-    return <AdminDashboard />;
-  }
-
-  // Handle page navigation
-  if (currentPage === 'privacy') {
-    return <PrivacyPolicy onBack={() => setCurrentPage('main')} />;
-  }
-  if (currentPage === 'terms') {
-    return <TermsOfService onBack={() => setCurrentPage('main')} />;
-  }
-  if (currentPage === 'support') {
-    return <SupportPage onBack={() => setCurrentPage('main')} />;
-  }
-
-
-
   return (
-    <>
-      {/* Show landing page for non-authenticated users */}
-      <SignedOut>
-        <LandingPage onNavigate={setCurrentPage} />
-      </SignedOut>
+    <Routes>
+      {/* Public routes */}
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/support" element={<SupportPage />} />
 
-      {/* Show main app for authenticated users */}
-      <SignedIn>
+      {/* Admin route */}
+      <Route path="/admin" element={
+        isAdmin ? <AdminDashboard /> : <div>Access Denied</div>
+      } />
+
+      {/* Main app route */}
+      <Route path="/*" element={
+        <>
+          {/* Show landing page for non-authenticated users */}
+          <SignedOut>
+            <LandingPage />
+          </SignedOut>
+
+          {/* Show main app for authenticated users */}
+          <SignedIn>
         <div className="flex h-screen font-sans bg-vedic-bg text-vedic-primary-text">
         <Sidebar
           course={COURSE_STRUCTURE}
@@ -261,8 +256,10 @@ How would you like to begin your spiritual journey today?`
         completedTopics={completedTopics}
       />
 
-      </SignedIn>
-    </>
+          </SignedIn>
+        </>
+      } />
+    </Routes>
   );
 };
 

@@ -1,21 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface SupportPageProps {
-  onBack?: () => void;
-}
-
-const SupportPage: React.FC<SupportPageProps> = ({ onBack }) => {
+const SupportPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-vedic-bg text-vedic-primary-text">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="flex items-center mb-6">
-            <button
-              onClick={onBack}
+            <Link
+              to="/"
               className="flex items-center text-vedic-accent hover:text-vedic-accent-dark transition-colors mr-4"
             >
               ← Back to Home
-            </button>
+            </Link>
           </div>
           <h1 className="text-3xl font-bold text-vedic-accent-dark mb-8">Support & Guidance</h1>
           
