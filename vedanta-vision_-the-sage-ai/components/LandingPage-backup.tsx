@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SignInButton, SignUpButton, useUser } from '@clerk/clerk-react';
 
 const LandingPage: React.FC = () => {
@@ -22,7 +23,6 @@ const LandingPage: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Features</a>
-              <a href="#faculty" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">Faculty</a>
               <a href="#about" className="text-vedic-primary-text hover:text-vedic-accent transition-colors">About</a>
               <SignInButton>
                 <button className="text-vedic-accent hover:text-vedic-accent-dark transition-colors">
@@ -54,7 +54,6 @@ const LandingPage: React.FC = () => {
             <div className="md:hidden bg-white border-t border-vedic-border">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <a href="#features" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Features</a>
-                <a href="#faculty" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">Faculty</a>
                 <a href="#about" className="block px-3 py-2 text-vedic-primary-text hover:text-vedic-accent">About</a>
                 <div className="flex flex-col space-y-2 px-3 py-2">
                   <SignInButton>
@@ -230,86 +229,8 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Faculty Section */}
-      <section id="faculty" className="py-16 lg:py-24 bg-vedic-bg-alt">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-vedic-accent-dark mb-4">
-              Distinguished Faculty
-            </h2>
-            <p className="text-lg text-vedic-secondary-text max-w-2xl mx-auto">
-              Guided by renowned scientists who bridge the wisdom of ancient traditions with modern understanding
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Dr. Prathosh A P */}
-            <div className="text-center group">
-              <div className="relative mx-auto mb-6 w-40 h-40">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-vedic-accent/20 to-vedic-surface border-4 border-vedic-accent/20 overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <img 
-                    src="/images/faculty/prathosh.jpg" 
-                    alt="Prof. Prathosh A P" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.nextElementSibling?.classList.remove('hidden');
-                    }}
-                  />
-                  <div className="w-full h-full bg-vedic-accent/10 flex items-center justify-center hidden">
-                    <span className="text-4xl text-vedic-accent">👨‍🔬</span>
-                  </div>
-                </div>
-                <div className="absolute inset-0 rounded-full bg-vedic-accent/5 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-2">Prof. Prathosh A P</h3>
-              <p className="text-vedic-secondary-text text-sm mb-4">Scientist, IISc</p>
-              <p className="text-vedic-secondary-text text-sm leading-relaxed">
-                Distinguished researcher bridging computational sciences with contemplative wisdom traditions.
-              </p>
-            </div>
-
-            {/* Dr. Satish Prasad Rath */}
-            <div className="text-center group">
-              <div className="relative mx-auto mb-6 w-40 h-40">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-vedic-accent/20 to-vedic-surface border-4 border-vedic-accent/20 overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <img 
-                    src="/images/faculty/satish.jpg" 
-                    alt="Dr. Satish Prasad Rath" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.nextElementSibling?.classList.remove('hidden');
-                    }}
-                  />
-                  <div className="w-full h-full bg-vedic-accent/10 flex items-center justify-center hidden">
-                    <span className="text-4xl text-vedic-accent">👨‍⚕️</span>
-                  </div>
-                </div>
-                <div className="absolute inset-0 rounded-full bg-vedic-accent/5 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <h3 className="text-xl font-semibold text-vedic-accent-dark mb-2">Dr. Satish Prasad Rath</h3>
-              <p className="text-vedic-secondary-text text-sm mb-4">MD, Physician, Scientist, Entrepreneur</p>
-              <p className="text-vedic-secondary-text text-sm leading-relaxed">
-                Pioneering physician-scientist integrating medical expertise with ancient healing wisdom.
-              </p>
-            </div>
-          </div>
-
-          {/* Coming Soon Note */}
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 rounded-full border border-vedic-border shadow-sm">
-              <span className="text-vedic-accent">🎙️</span>
-              <span className="text-sm text-vedic-secondary-text font-medium">Podcasts Coming Soon</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
-      <section id="about" className="py-16 bg-white">
+      <section className="py-16 bg-vedic-bg-alt">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-vedic-accent-dark mb-8">
             A Digital Sanctuary for Vedantic Learning
