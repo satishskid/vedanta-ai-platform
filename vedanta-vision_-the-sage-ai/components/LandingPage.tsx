@@ -264,7 +264,7 @@ const LandingPage: React.FC = () => {
                 <div className="absolute inset-0 rounded-full bg-vedic-accent/5 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <h3 className="text-xl font-semibold text-vedic-accent-dark mb-2">Prof. Prathosh A P</h3>
-              <p className="text-vedic-secondary-text text-sm mb-4">Scientist, IISc</p>
+              <p className="text-vedic-secondary-text text-sm mb-4">PhD, Computer Sciences, AI | Scientist, IISc</p>
               <p className="text-vedic-secondary-text text-sm leading-relaxed">
                 Distinguished researcher bridging computational sciences with contemplative wisdom traditions.
               </p>
